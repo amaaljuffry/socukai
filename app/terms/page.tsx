@@ -22,7 +22,7 @@ export default function TermsPage() {
 
             <h3 className="font-semibold text-foreground pt-4">2. Disclaimer of Warranties</h3>
             <p>
-              The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. This application is for informational purposes only and does not constitute professional financial or tax advice. You are solely responsible for your own tax compliance, decisions, and filings.
+              The Service is provided to You &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; and with all faults and defects without warranty of any kind. This application is for informational purposes only and does not constitute professional financial or tax advice. You are solely responsible for your own tax compliance, decisions, and filings.
             </p>
 
             <h3 className="font-semibold text-foreground pt-4">3. Intellectual Property</h3>
