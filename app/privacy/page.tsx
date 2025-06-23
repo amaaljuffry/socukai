@@ -30,7 +30,7 @@ export default function PrivacyPage() {
 
             <h3 className="font-semibold text-foreground pt-4">2. How We Use Information</h3>
             <p>
-              We use the information we collect to provide, maintain, and improve our services, and to communicate with you. We do not sell our users' private personal information.
+              We use the information we collect to provide, maintain, and improve our services, and to communicate with you. We do not sell our users&apos; private personal information.
             </p>
 
             <h3 className="font-semibold text-foreground pt-4">3. Data Security</h3>

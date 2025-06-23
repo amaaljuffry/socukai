@@ -822,7 +822,7 @@ function SolePropOverview() {
                 <ul className="text-sm text-muted-foreground mt-1 space-y-1">
                   <li>• Unlimited personal liability</li>
                   <li>• Limited access to financing</li>
-                  <li>• Business ends with owner's death</li>
+                  <li>• Business ends with owner&apos;s death</li>
                   <li>• Higher tax rates for high income</li>
                 </ul>
               </div>
@@ -1520,7 +1520,7 @@ function CompanySSMTaxStatus() {
                   <tr><td className="border p-2">Section 58</td><td className="border p-2">Changes in Director/Secretary/Address</td><td className="border p-2">Update SSM on company changes.</td></tr>
                   <tr><td className="border p-2">Section 78</td><td className="border p-2">Allotment of Shares</td><td className="border p-2">For issuance of new shares.</td></tr>
                   <tr><td className="border p-2">Form EA</td><td className="border p-2">Employee Remuneration Statement</td><td className="border p-2">Given to employees for tax filing.</td></tr>
-                  <tr><td className="border p-2">Form E (LHDN)</td><td className="border p-2">Employer Return Form</td><td className="border p-2">Annual declaration of all employees' earnings to LHDN.</td></tr>
+                  <tr><td className="border p-2">Form E (LHDN)</td><td className="border p-2">Employer Return Form</td><td className="border p-2">Annual declaration of all employees&apos; earnings to LHDN.</td></tr>
                   <tr><td className="border p-2">Form C (LHDN)</td><td className="border p-2">Company Income Tax Return</td><td className="border p-2">For corporate tax filing. Due 7 months after end of financial year.</td></tr>
                   <tr><td className="border p-2">Form CP204</td><td className="border p-2">Estimate of Tax Payable</td><td className="border p-2">Annual estimate of company tax payable, must be submitted within 3 months of new basis period.</td></tr>
                   <tr><td className="border p-2">Form CP204A</td><td className="border p-2">Amendment to CP204</td><td className="border p-2">If actual profits deviate significantly from the estimate.</td></tr>
@@ -1547,7 +1547,7 @@ function CompanySSMTaxStatus() {
                   <tr><td className="border p-2">Companies Act 2016</td><td className="border p-2">Main act regulating Sdn Bhd incorporation, structure, and compliance.</td></tr>
                   <tr><td className="border p-2">Income Tax Act 1967</td><td className="border p-2">Corporate tax obligations and structure.</td></tr>
                   <tr><td className="border p-2">Employment Act 1955</td><td className="border p-2">If you hire employees, governs contracts, benefits, hours, etc.</td></tr>
-                  <tr><td className="border p-2">Companies Commission of Malaysia Act 2001</td><td className="border p-2">Governs SSM's operations.</td></tr>
+                  <tr><td className="border p-2">Companies Commission of Malaysia Act 2001</td><td className="border p-2">Governs SSM&apos;s operations.</td></tr>
                   <tr><td className="border p-2">Labuan Companies Act 1990</td><td className="border p-2">Applies only if company is based in Labuan.</td></tr>
                   <tr><td className="border p-2">EPF Act 1991, SOCSO Act, EIS Act 2017</td><td className="border p-2">Governs employee contributions and protections.</td></tr>
                 </tbody>
@@ -1573,7 +1573,7 @@ function CompanySSMTaxStatus() {
                 <ul className="text-sm text-muted-foreground mt-1 space-y-1">
                   <li>• Company name reservation</li>
                   <li>• Memorandum & Articles of Association</li>
-                  <li>• Directors' and shareholders' details</li>
+                  <li>• Directors&apos; and shareholders&apos; details</li>
                   <li>• Registered office address</li>
                   <li>• Business activity description</li>
                 </ul>
@@ -1706,7 +1706,7 @@ function CompanySSMTaxStatus() {
                   <h4 className="font-semibold text-blue-800 mb-2">Profile:</h4>
                   <ul className="text-sm text-blue-700 space-y-1">
                     <li>• Small manufacturing business</li>
-                    <li>• Annual turnover: RM1,500,000</li>
+                    <li>• Business&apos;s annual turnover.</li>
                     <li>• 15 employees</li>
                     <li>• Factory and office premises</li>
                   </ul>
@@ -1970,8 +1970,8 @@ function CompanyEInvoicing() {
           <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
             <h3 className="font-semibold text-red-900 mb-2">Key Implications for Companies:</h3>
             <ul className="text-red-800 space-y-1 text-sm list-disc pl-5">
-              <li>The company's TIN (not the directors') must be used on all e-invoices.</li>
-              <li>E-invoicing integrates directly into the company's financial and tax reporting process.</li>
+              <li>The company&apos;s TIN (not the directors&apos;) must be used on all e-invoices.</li>
+              <li>E-invoicing integrates directly into the company&apos;s financial and tax reporting process.</li>
               <li>Crucial for corporate tax filings (Form C) and proving business expenses.</li>
               <li>API integration with existing ERP or accounting systems is highly recommended for efficiency.</li>
             </ul>
@@ -1985,7 +1985,7 @@ function CompanyEInvoicing() {
         </CardHeader>
         <CardContent>
             <p className="text-sm text-muted-foreground mb-4">
-              Your company's mandatory start date is determined by its annual turnover from the audited financial statements.
+              Your company&apos;s mandatory start date is determined by its annual turnover from the audited financial statements.
             </p>
             <div className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

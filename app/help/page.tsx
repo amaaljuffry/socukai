@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function HelpPage() {
   return (
@@ -27,7 +28,7 @@ export default function HelpPage() {
             </CardHeader>
             <CardContent className="space-y-2">
                <p className="text-muted-foreground">
-                For official information, please refer to LHDN's official portal.
+                For official information, please refer to LHDN&apos;s official portal.
               </p>
               <a href="https://www.hasil.gov.my/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                 LHDN Official Website
@@ -40,7 +41,7 @@ export default function HelpPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                If you can't find what you're looking for in the FAQs or official resources, please don't hesitate to send us a message.
+                If you can&apos;t find what you&apos;re looking for in the FAQs or official resources, please don&apos;t hesitate to send us a message.
               </p>
               <Link href="/contact">
                 <Button>Contact Us</Button>

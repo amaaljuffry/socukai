@@ -101,7 +101,7 @@ function ContactForm() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Tell us what you're thinking..." rows={5} {...field} />
+                  <Textarea placeholder="Tell us what you&apos;re thinking..." rows={5} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

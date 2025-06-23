@@ -44,6 +44,11 @@ export default function TermsPage() {
             <p>
               We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. We will notify you of any changes by posting the new Terms and Conditions on this page.
             </p>
+
+            <h3 className="font-semibold text-foreground pt-4">7. Links to Third Party Sites</h3>
+            <p>
+              Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&apos;s site. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+            </p>
           </CardContent>
         </Card>
       </div>
