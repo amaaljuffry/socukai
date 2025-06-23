@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import type { BadgeProps } from "@/components/ui/badge";
 
 export default function ChangelogPage() {
   const changes = [
@@ -43,7 +44,7 @@ export default function ChangelogPage() {
               <ul className="space-y-2">
                 {change.items.map((item, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <Badge variant={getBadgeVariant(item.type) as string}>{item.type}</Badge>
+                    <Badge variant={getBadgeVariant(item.type) as BadgeProps["variant"]}>{item.type}</Badge>
                     <span>{item.text}</span>
                   </li>
                 ))}
