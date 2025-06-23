@@ -31,7 +31,7 @@ const companyTaxSchema = z.object({
     (val) => !isNaN(Number(val)) && Number(val) >= 0,
     "Profit must be a positive number"
   ),
-  isSME: z.boolean().optional().default(true),
+  isSME: z.boolean(),
 });
 
 type CompanyTaxData = z.infer<typeof companyTaxSchema>;
@@ -432,7 +432,7 @@ export function SolePropTaxEstimator() {
 export function CompanyTaxEstimator() {
   const [showResults, setShowResults] = useState(false);
 
-  const form = useForm<CompanyTaxData>({
+  const form = useForm<{ profitBeforeTax: string; isSME: boolean }>({
     resolver: zodResolver(companyTaxSchema),
     defaultValues: {
       profitBeforeTax: "",
@@ -504,7 +504,7 @@ export function CompanyTaxEstimator() {
     };
   }, [watchedValues.profitBeforeTax, watchedValues.isSME]);
 
-  const onSubmit = (data: CompanyTaxData) => {
+  const onSubmit = (data: { profitBeforeTax: string; isSME: boolean }) => {
     console.log('Form submitted with data:', data);
     setShowResults(true);
   };
