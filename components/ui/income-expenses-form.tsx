@@ -56,10 +56,17 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+type FormType = "individual" | "soleprop" | "company";
+
 // 2. REUSABLE CALCULATOR COMPONENT
 // All logic is now centralized here to avoid duplication.
 // It accepts props to customize its behavior for different entity types.
-function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, expenseCategories }) {
+function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, expenseCategories }: {
+  formType: FormType;
+  defaultValues: any;
+  incomeCategories: string[];
+  expenseCategories: string[];
+}) {
   const [submissionResult, setSubmissionResult] = useState(null);
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
