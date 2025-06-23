@@ -16,7 +16,8 @@ import {
   TrendingUp,
   User,
 } from 'lucide-react';
-import { useFieldArray, useForm } from 'react-hook-form';
+// Corrected import from 'react-hook-form'
+import { useFieldArray, useForm, FieldErrors } from 'react-hook-form';
 import * as z from 'zod';
 
 import { Button } from '@/components/ui/button';
@@ -38,7 +39,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-// 1. ZOD SCHEMA (No changes needed, this was well-defined)
+// 1. ZOD SCHEMA
 const incomeExpenseItemSchema = z.object({
   description: z.string().min(1, 'Description is required'),
   amount: z
@@ -67,8 +68,6 @@ type SubmissionResult = {
 };
 
 // 2. REUSABLE CALCULATOR COMPONENT
-// All logic is now centralized here to avoid duplication.
-// It accepts props to customize its behavior for different entity types.
 function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, expenseCategories }: {
   formType: FormType;
   defaultValues: FormData;
@@ -108,7 +107,6 @@ function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, ex
     name: 'expenseItems',
   });
 
-  // Calculation logic is memoized for performance
   const calculationResult = useMemo(() => {
     const totalIncome = (watchedValues.incomeItems || []).reduce(
       (sum, item) => sum + (Number(item?.amount) || 0),
@@ -140,7 +138,6 @@ function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, ex
 
   const { totalIncome, totalExpenses, profit: netProfit } = calculationResult;
 
-  // Form handlers
   const onSubmit = (data: FormData) => {
     setSubmissionResult({
       ...periodCalculations,
@@ -155,12 +152,13 @@ function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, ex
     setSubmissionResult(null);
   };
 
-  const onError = (errors) => {
+  // --- THIS IS THE FIX ---
+  // The 'errors' parameter is now correctly typed.
+  const onError = (errors: FieldErrors<FormData>) => {
     console.error('Form validation errors:', errors);
     setSubmissionResult(null);
   };
 
-  // Dynamic titles and labels based on formType
   const entityConfig = {
     individual: {
       title: 'Personal',
@@ -190,7 +188,6 @@ function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, ex
   const config = entityConfig[formType];
 
   return (
-    // Main container with adjusted spacing (space-y-4)
     <div className="space-y-4">
       {/* --- SUMMARY CARDS --- */}
       <Card className="border-2 border-blue-200 bg-blue-50">
@@ -647,10 +644,6 @@ function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, ex
 }
 
 // 3. SPECIFIC COMPONENT IMPLEMENTATIONS
-// These are now lightweight wrappers that pass the correct data to the main calculator.
-
-// --- Categories and Defaults ---
-
 const individualIncomeCategories = [
   'Employment Salary',
   'Freelance Income',
@@ -676,7 +669,7 @@ const individualExpenseCategories = [
   'Other Expenses',
 ];
 const individualDefaultValues = {
-  period: 'monthly',
+  period: 'monthly' as const,
   incomeItems: [{ description: 'Monthly Salary', amount: '5000', category: 'Employment Salary' }],
   expenseItems: [
     { description: 'Transportation & Meals', amount: '800', category: 'Transportation' },
@@ -711,7 +704,7 @@ const solePropExpenseCategories = [
   'Other Business Expenses',
 ];
 const solePropDefaultValues = {
-  period: 'monthly',
+  period: 'monthly' as const,
   incomeItems: [{ description: 'Consulting Project', amount: '8000', category: 'Consulting Fees' }],
   expenseItems: [
     { description: 'Office Rent & Utilities', amount: '1500', category: 'Office Rental' },
@@ -746,12 +739,10 @@ const companyExpenseCategories = [
   'Other Operating Expenses',
 ];
 const companyDefaultValues = {
-  period: 'monthly',
+  period: 'monthly' as const,
   incomeItems: [{ description: 'Software Services', amount: '25000', category: 'Service Revenue' }],
   expenseItems: [{ description: 'Employee Salaries', amount: '12000', category: 'Employee Costs' }],
 };
-
-// --- Exported Components ---
 
 export function IndividualIncomeExpensesForm() {
   return (
@@ -786,7 +777,6 @@ export function CompanyIncomeExpensesForm() {
   );
 }
 
-// Kept for backward compatibility if needed
 export function IncomeExpensesForm() {
   return <IndividualIncomeExpensesForm />;
 }
