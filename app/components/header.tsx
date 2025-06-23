@@ -1,19 +1,20 @@
-"use client";
+'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ChevronDown, Menu } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
   DropdownMenuLabel,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
-import Link from 'next/link';
-import { Menu } from 'lucide-react';
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export function Header() {
   const router = useRouter();
@@ -44,8 +45,17 @@ export function Header() {
           <Menu className="h-5 w-5" />
         </button>
         {/* Centered logo on mobile */}
-        <Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center z-10 md:static md:translate-x-0 md:translate-y-0 md:ml-0">
-          <img src="/logo.svg" alt="SOCUKAI.MY Logo" className="h-8 w-auto" />
+        <Link
+          href="/"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center z-10 md:static md:translate-x-0 md:translate-y-0 md:ml-0"
+        >
+          <Image
+            src="/logo.svg"
+            alt="SOCUKAI.MY Logo"
+            width={32}
+            height={32}
+            className="h-8 w-auto"
+          />
         </Link>
         {/* Mobile menu button on right */}
         <div className="ml-auto md:hidden">
@@ -143,4 +153,4 @@ export function Header() {
       </div>
     </header>
   );
-} 
+}
