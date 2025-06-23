@@ -5,7 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Button } from "@/components/ui/button";
 import { Download, FileText, FileSpreadsheet, Link as LinkIcon } from "lucide-react";
 
-const downloadItems = [
+interface DownloadItem {
+  title: string;
+  description: string;
+  format: string;
+  link: string;
+  icon: React.ReactNode;
+  isExternal?: boolean;
+}
+
+const downloadItems: DownloadItem[] = [
   {
     title: "Sample Invoice Template (Freelancer)",
     description: "A professional and easy-to-use invoice template for your freelance projects. Helps ensure you include all necessary details for prompt payment.",
@@ -73,7 +82,7 @@ export function IndividualDownloads() {
   );
 }
 
-const solePropDownloads = [
+const solePropDownloads: DownloadItem[] = [
   {
     title: "Borang B - Individual Business Tax Form (PDF)",
     description: "Required for annual tax filing by sole proprietors.",
@@ -127,7 +136,7 @@ export function SolePropDownloads() {
   );
 }
 
-const companyDownloads = [
+const companyDownloads: DownloadItem[] = [
   {
     title: "Form C - Company Tax Return (PDF)",
     description: "Mandatory tax submission for Sdn Bhd companies.",
