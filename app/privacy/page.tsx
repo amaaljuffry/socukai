@@ -40,7 +40,7 @@ export default function PrivacyPage() {
 
             <h3 className="font-semibold text-foreground pt-4">4. Links To Other Websites</h3>
             <p>
-              Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+              Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&apos;s site. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
             </p>
           </CardContent>
         </Card>

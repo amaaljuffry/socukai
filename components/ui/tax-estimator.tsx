@@ -11,20 +11,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Calculator, TrendingUp, Receipt, DollarSign, Building } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 
-// Zod schema for tax estimation form
-const taxEstimatorSchema = z.object({
-  netProfit: z.string().min(1, "Net profit is required").refine(
-    (val) => !isNaN(Number(val)) && Number(val) >= 0,
-    "Net profit must be a positive number"
-  ),
-  deductions: z.string().min(1, "Deductions are required").refine(
-    (val) => !isNaN(Number(val)) && Number(val) >= 0,
-    "Deductions must be a positive number"
-  ),
-});
-
-type TaxEstimatorData = z.infer<typeof taxEstimatorSchema>;
-
 // Malaysia 2024 Income Tax Brackets (RM)
 const TAX_BRACKETS = [
   { min: 0, max: 5000, rate: 0.00, description: "0% on first RM5,000" },
@@ -159,6 +145,7 @@ export function IndividualTaxEstimator() {
   }, [watchedValues]);
 
   const onSubmit = (data: IndividualTaxData) => {
+    console.log('Form submitted with data:', data);
     setShowResults(true);
   };
   
@@ -343,6 +330,7 @@ export function SolePropTaxEstimator() {
   }, [watchedValues]);
 
   const onSubmit = (data: IndividualTaxData) => {
+    console.log('Form submitted with data:', data);
     setShowResults(true);
   };
   
@@ -517,6 +505,7 @@ export function CompanyTaxEstimator() {
   }, [watchedValues.profitBeforeTax, watchedValues.isSME]);
 
   const onSubmit = (data: CompanyTaxData) => {
+    console.log('Form submitted with data:', data);
     setShowResults(true);
   };
 
