@@ -63,7 +63,7 @@ type FormType = "individual" | "soleprop" | "company";
 // It accepts props to customize its behavior for different entity types.
 function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, expenseCategories }: {
   formType: FormType;
-  defaultValues: any;
+  defaultValues: FormData;
   incomeCategories: string[];
   expenseCategories: string[];
 }) {
