@@ -31,7 +31,7 @@ const companyTaxSchema = z.object({
     (val) => !isNaN(Number(val)) && Number(val) >= 0,
     "Profit must be a positive number"
   ),
-  isSME: z.boolean().default(true),
+  isSME: z.boolean().optional().default(true),
 });
 
 type CompanyTaxData = z.infer<typeof companyTaxSchema>;
