@@ -4,7 +4,6 @@ import { SidebarNav, SidebarNavItem } from '@/components/ui/sidebar-nav';
 import { LayoutWrapper } from '@/components/ui/layout-wrapper';
 import { Header } from '@/app/components/header';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 
 const staticSidebarLinks: SidebarNavItem[] = [
   { title: 'About', href: '/about' },

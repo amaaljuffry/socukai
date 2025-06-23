@@ -296,7 +296,7 @@ function IndividualOverview() {
                 Pure Salary Earners
               </h4>
               <p className="text-sm text-green-800 mb-3">
-                <strong>E-Invoicing: NOT REQUIRED</strong> - You don't need to issue e-invoices.
+                <strong>E-Invoicing: NOT REQUIRED</strong> - You don&apos;t need to issue e-invoices.
               </p>
               <ul className="text-sm text-green-800 space-y-1">
                 <li>• Employment income only (Form BE)</li>
@@ -1868,7 +1868,7 @@ function SolePropEInvoicing() {
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-muted-foreground leading-relaxed">
-            As a sole proprietorship is a registered business, it must comply with the e-invoicing mandate. The rules apply to the business entity, and the implementation date is determined by the business's annual turnover.
+            As a sole proprietorship is a registered business, it must comply with the e-invoicing mandate. The rules apply to the business entity, and the implementation date is determined by the business&apos;s annual turnover.
           </p>
           <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
             <h3 className="font-semibold text-blue-900 mb-2">Key Considerations for Sole Proprietors:</h3>
@@ -1929,7 +1929,7 @@ function SolePropEInvoicing() {
               <p className="text-muted-foreground">The process is standardized for all businesses:</p>
               <ol className="list-decimal pl-5 space-y-2 text-sm">
                 <li><strong>Create Invoice:</strong> Generate an invoice in XML or JSON format. You can use accounting software or the free MyInvois Portal.</li>
-                <li><strong>Submit for Validation:</strong> Send the invoice to the IRBM's MyInvois system via API or the portal.</li>
+                <li><strong>Submit for Validation:</strong> Send the invoice to the IRBM&apos;s MyInvois system via API or the portal.</li>
                 <li><strong>Receive Validated Invoice:</strong> Once validated, IRBM returns the invoice with a Unique Identifier Number (UIN) and a QR code.</li>
                 <li><strong>Share with Customer:</strong> Share the validated invoice (usually the PDF with the QR code) with your customer.</li>
               </ol>
@@ -1943,7 +1943,7 @@ function SolePropEInvoicing() {
               <p className="font-semibold">Key compliance points:</p>
               <ul className="list-disc pl-5 space-y-2 text-sm">
                 <li>You must issue e-invoices for all business transactions, including those to individuals.</li>
-                <li>For purchases from suppliers not yet on e-invoicing, you may need to issue a "self-billed" e-invoice to record the expense.</li>
+                <li>For purchases from suppliers not yet on e-invoicing, you may need to issue a &quot;self-billed&quot; e-invoice to record the expense.</li>
                 <li>All e-invoices must be archived for 7 years. The MyInvois system will store a copy.</li>
               </ul>
             </div>
@@ -2028,7 +2028,7 @@ function CompanyEInvoicing() {
               </p>
               <ul className="list-disc pl-5 space-y-2 text-sm">
                 <li><strong>API Integration:</strong> Connect your ERP or accounting software directly to the MyInvois system to automate invoice submission and validation. <span className="text-muted-foreground">(Requires developer/IT support)</span></li>
-                <li><strong>Cross-Border Transactions:</strong> For imports, the company must issue a "self-billed" e-invoice. For exports, a standard e-invoice is issued to the foreign buyer.</li>
+                <li><strong>Cross-Border Transactions:</strong> For imports, the company must issue a &quot;self-billed&quot; e-invoice. For exports, a standard e-invoice is issued to the foreign buyer.</li>
                 <li><strong>Intercompany Transactions:</strong> E-invoices are required for transactions between related companies.</li>
               </ul>
             </div>
