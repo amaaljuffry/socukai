@@ -34,8 +34,6 @@ const companyTaxSchema = z.object({
   isSME: z.boolean(),
 });
 
-type CompanyTaxData = z.infer<typeof companyTaxSchema>;
-
 // Malaysia 2024 Corporate Tax Brackets
 const COMPANY_TAX_RATES = {
   sme: [
