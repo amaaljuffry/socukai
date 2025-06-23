@@ -133,7 +133,7 @@ function IncomeExpenseCalculator({ formType, defaultValues, incomeCategories, ex
   const { totalIncome, totalExpenses, profit: netProfit } = calculationResult;
 
   // Form handlers
-  const onSubmit = (data) => {
+  const onSubmit = (data: FormData) => {
     setSubmissionResult({
       ...periodCalculations,
       period: data.period,
