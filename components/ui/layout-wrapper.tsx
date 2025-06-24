@@ -1,9 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
@@ -42,11 +40,8 @@ export function LayoutWrapper({ topTab, sidebar, children, className }: LayoutWr
         {/* Mobile Sidebar */}
         <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
           <SheetContent side="left" className="w-80 p-0">
-            <div className="flex items-center justify-between p-4 border-b">
+            <div className="flex items-center p-4 border-b">
               <h2 className="text-lg font-semibold">Navigation</h2>
-              <Button variant="ghost" size="icon" onClick={() => setIsSidebarOpen(false)}>
-                <X className="h-4 w-4" />
-              </Button>
             </div>
             <div className="flex-1 overflow-y-auto">{sidebar}</div>
           </SheetContent>

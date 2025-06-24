@@ -16,9 +16,6 @@ export default function AboutPage() {
             <p>
               Built with modern technology and a focus on user experience, this tool aims to empower you with the knowledge and resources needed to manage your tax compliance with confidence.
             </p>
-            <p>
-              The source code is open-source and available on GitHub. We welcome contributions and feedback from the community.
-            </p>
           </CardContent>
         </Card>
       </div>

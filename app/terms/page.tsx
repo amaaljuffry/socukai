@@ -17,7 +17,7 @@ export default function TermsPage() {
             
             <h3 className="font-semibold text-foreground pt-4">1. Acknowledgment</h3>
             <p>
-              These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and SOCUKAI.MY. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+              These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and Socukai.my. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
             </p>
 
             <h3 className="font-semibold text-foreground pt-4">2. Disclaimer of Warranties</h3>
