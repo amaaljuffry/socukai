@@ -1,6 +1,6 @@
 "use client";
 
-import { use } from 'react';
+import { use, Suspense } from 'react';
 import { SidebarNav, SidebarNavItem } from '@/components/ui/sidebar-nav';
 import { LayoutWrapper } from '@/components/ui/layout-wrapper';
 import { Header } from '@/app/components/header';
@@ -50,8 +50,16 @@ export default function EntityLayout({
 
   return (
     <LayoutWrapper
-      topTab={<Header />}
-      sidebar={<SidebarNav items={links} className="p-4" />}
+      topTab={
+        <Suspense fallback={<div className="flex items-center px-4 py-4 border-b bg-background min-h-[56px]">Loading...</div>}>
+          <Header />
+        </Suspense>
+      }
+      sidebar={
+        <Suspense fallback={<div className="p-4">Loading...</div>}>
+          <SidebarNav items={links} className="p-4" />
+        </Suspense>
+      }
     >
       {children}
     </LayoutWrapper>
