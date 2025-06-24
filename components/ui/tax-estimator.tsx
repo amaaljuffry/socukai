@@ -157,14 +157,14 @@ function ReliefInput({ relief, value, setValue, error }: {
       </div>
       {relief.options ? (
         <Select
-          onValueChange={(val: string) => setValue((v: any) => ({ ...v, option: val, amount: "" }))}
+          onValueChange={(val: string) => setValue((v: { option?: string; amount?: number | string }) => ({ ...v, option: val, amount: "" }))}
           value={value?.option || ""}
         >
           <SelectTrigger className="w-64">
             <SelectValue placeholder="Select type" />
           </SelectTrigger>
           <SelectContent>
-            {relief.options.map((opt: any) => (
+            {relief.options.map((opt: { label: string; max: number }) => (
               <SelectItem key={opt.label} value={opt.label}>{opt.label} (Max: RM{opt.max})</SelectItem>
             ))}
           </SelectContent>
@@ -175,7 +175,7 @@ function ReliefInput({ relief, value, setValue, error }: {
         min={0}
         max={max}
         value={value?.amount || ""}
-        onChange={e => setValue((v: any) => ({ ...v, amount: Math.min(Number(e.target.value), max) }))}
+        onChange={e => setValue((v: { option?: string; amount?: number | string }) => ({ ...v, amount: Math.min(Number(e.target.value), max) }))}
         placeholder={`Enter amount (Max: RM${max})`}
         className="w-48"
       />
@@ -303,7 +303,7 @@ export function IndividualTaxEstimator() {
       totalReliefs,
       reliefBreakdown,
     };
-  }, [watchedValues, totalReliefs]);
+  }, [watchedValues, totalReliefs, reliefBreakdown]);
 
   const onSubmit = () => {
     setReliefErrors(errors);
@@ -536,7 +536,7 @@ export function SolePropTaxEstimator() {
       totalReliefs,
       reliefBreakdown,
     };
-  }, [watchedValues, totalReliefs]);
+  }, [watchedValues, totalReliefs, reliefBreakdown]);
 
   const onSubmit = () => {
     setReliefErrors(errors);
@@ -619,7 +619,7 @@ export function SolePropTaxEstimator() {
           </CardHeader>
           <CardContent>
             <div className="mb-4 p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
-              <strong>How does tax relief work?</strong> Tax relief is like the government pretending your piggy bank is smaller, so you pay less tax on your income. The actual cash you save depends on your tax bracket. See the "More Info" for each relief!
+              <strong>How does tax relief work?</strong> Tax relief is like the government pretending your piggy bank is smaller, so you pay less tax on your income. The actual cash you save depends on your tax bracket. See the &quot;More Info&quot; for each relief!
             </div>
             <Accordion type="multiple" className="mb-6">
               {groupedReliefs.map(group => (

@@ -22,11 +22,11 @@ const companyIncentives = [
   // ...add more as needed
 ];
 
-function ReliefForm({ reliefs, values, setValues }) {
+function ReliefForm({ reliefs, values, setValues }: { reliefs: { id: string; name: string; max: number; description: string }[]; values: Record<string, number>; setValues: React.Dispatch<React.SetStateAction<Record<string, number>>> }) {
   return (
     <div className="mb-6">
       <h3 className="font-semibold mb-2">Personal Tax Reliefs</h3>
-      {reliefs.map(r => (
+      {reliefs.map((r: { id: string; name: string; max: number; description: string }) => (
         <div key={r.id} className="mb-3">
           <label className="block font-medium">{r.name} (Max: RM{r.max})
             <span title={r.description} className="ml-2 cursor-help text-blue-500">?</span>
@@ -36,7 +36,7 @@ function ReliefForm({ reliefs, values, setValues }) {
             max={r.max}
             min={0}
             value={values[r.id] || ""}
-            onChange={e => setValues(v => ({ ...v, [r.id]: Math.min(Number(e.target.value), r.max) }))}
+            onChange={e => setValues((v: Record<string, number>) => ({ ...v, [r.id]: Math.min(Number(e.target.value), r.max) }))}
             className="border rounded px-2 py-1 w-40"
           />
         </div>
@@ -45,11 +45,11 @@ function ReliefForm({ reliefs, values, setValues }) {
   );
 }
 
-function BusinessForm({ deductions, values, setValues }) {
+function BusinessForm({ deductions, values, setValues }: { deductions: { id: string; name: string; description: string }[]; values: Record<string, number>; setValues: React.Dispatch<React.SetStateAction<Record<string, number>>> }) {
   return (
     <div className="mb-6">
       <h3 className="font-semibold mb-2">Business Income & Expenses</h3>
-      {deductions.map(d => (
+      {deductions.map((d: { id: string; name: string; description: string }) => (
         <div key={d.id} className="mb-3">
           <label className="block font-medium">{d.name}
             <span title={d.description} className="ml-2 cursor-help text-blue-500">?</span>
@@ -58,7 +58,7 @@ function BusinessForm({ deductions, values, setValues }) {
             type="number"
             min={0}
             value={values[d.id] || ""}
-            onChange={e => setValues(v => ({ ...v, [d.id]: Number(e.target.value) }))}
+            onChange={e => setValues((v: Record<string, number>) => ({ ...v, [d.id]: Number(e.target.value) }))}
             className="border rounded px-2 py-1 w-40"
           />
         </div>
@@ -67,11 +67,11 @@ function BusinessForm({ deductions, values, setValues }) {
   );
 }
 
-function CompanyIncentivesForm({ incentives, values, setValues }) {
+function CompanyIncentivesForm({ incentives, values, setValues }: { incentives: { id: string; name: string; description: string }[]; values: Record<string, number>; setValues: React.Dispatch<React.SetStateAction<Record<string, number>>> }) {
   return (
     <div className="mb-6">
       <h3 className="font-semibold mb-2">Company Tax Incentives</h3>
-      {incentives.map(i => (
+      {incentives.map((i: { id: string; name: string; description: string }) => (
         <div key={i.id} className="mb-3">
           <label className="block font-medium">{i.name}
             <span title={i.description} className="ml-2 cursor-help text-blue-500">?</span>
@@ -80,7 +80,7 @@ function CompanyIncentivesForm({ incentives, values, setValues }) {
             type="number"
             min={0}
             value={values[i.id] || ""}
-            onChange={e => setValues(v => ({ ...v, [i.id]: Number(e.target.value) }))}
+            onChange={e => setValues((v: Record<string, number>) => ({ ...v, [i.id]: Number(e.target.value) }))}
             className="border rounded px-2 py-1 w-40"
           />
         </div>
@@ -98,18 +98,18 @@ export default function TaxReliefPage() {
   const [otherIncome, setOtherIncome] = useState("");
 
   // Calculation logic
-  const sum = obj => Object.values(obj).reduce((a, b) => a + (Number(b) || 0), 0);
+  const sum = (obj: Record<string, number | string | undefined>): number => Object.values(obj).reduce((a: number, b) => a + (Number(b) || 0), 0);
   let summary = null;
   if (entityType === "individual") {
-    const totalReliefs = sum(personalValues);
+    const totalReliefs: number = sum(personalValues);
     summary = (
       <div className="mt-4 p-4 bg-green-50 rounded">
         <strong>Your total tax reliefs:</strong> RM{totalReliefs.toLocaleString()}
       </div>
     );
   } else if (entityType === "soleprop") {
-    const netBusiness = Number(businessIncome) - sum(businessValues);
-    const totalReliefs = sum(personalValues);
+    const netBusiness: number = Number(businessIncome) - sum(businessValues);
+    const totalReliefs: number = sum(personalValues);
     summary = (
       <div className="mt-4 p-4 bg-green-50 rounded">
         <div><strong>Your net business income:</strong> RM{netBusiness.toLocaleString()}</div>
@@ -118,19 +118,19 @@ export default function TaxReliefPage() {
       </div>
     );
   } else if (entityType === "company") {
-    const netBusiness = Number(businessIncome) - sum(businessValues);
-    const totalIncentives = sum(companyValues);
+    const netBusiness: number = Number(businessIncome) - sum(businessValues);
+    const totalIncentives: number = sum(companyValues);
     summary = (
       <div className="mt-4 p-4 bg-green-50 rounded">
         <div><strong>Your net business income:</strong> RM{netBusiness.toLocaleString()}</div>
-        <div><strong>Your company's taxable income:</strong> RM{(netBusiness - totalIncentives).toLocaleString()}</div>
+        <div><strong>Your company&apos;s taxable income:</strong> RM{(netBusiness - totalIncentives).toLocaleString()}</div>
       </div>
     );
   }
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Tax Relief & Deductions</h1>
+      <h1 className="text-2xl font-bold mb-6">Tax Relief &amp; Deductions</h1>
       <div className="mb-6">
         <label className="block font-semibold mb-2">Who are you filing as?</label>
         <select
