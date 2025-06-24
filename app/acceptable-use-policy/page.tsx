@@ -64,7 +64,7 @@ export default function AcceptableUsePolicyPage() {
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">5. Reporting Violations</h2>
-          <p>Report abuse or policy breaches to: legal@socukai.my.</p>
+          <p>Report abuse or policy breaches via our <a href="/contact" className="text-blue-600 underline">Contact Us</a> page.</p>
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">6. Changes to This Policy</h2>

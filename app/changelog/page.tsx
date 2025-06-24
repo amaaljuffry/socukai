@@ -121,6 +121,18 @@ const changelog = [
     ],
     fixed: [],
     removed: []
+  },
+  {
+    version: "2.2.0",
+    date: "2025-06",
+    added: [],
+    changed: [
+      "Replaced all references to legal@socukai.my with a Contact Us page link for reporting unauthorized account use and policy breaches."
+    ],
+    fixed: [],
+    removed: [
+      "Direct email reporting to legal@socukai.my from Terms of Service and Acceptable Use Policy."
+    ]
   }
 ];
 

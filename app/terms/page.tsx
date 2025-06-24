@@ -54,7 +54,7 @@ export default function TermsPage() {
                   <li>Provide accurate, current, and complete information during the registration process.</li>
                   <li>Maintain and promptly update your account information.</li>
                   <li>Maintain the security of your password and accept all risks of unauthorized access to your account.</li>
-                  <li>Notify us immediately at <a href="mailto:legal@socukai.my" className="text-blue-600 underline">legal@socukai.my</a> of any known or suspected unauthorized use of your account.</li>
+                  <li>Notify us immediately of any known or suspected unauthorized use of your account via our <Link href="/contact" className="text-blue-600 underline">Contact Us</Link> page.</li>
                 </ul>
                 <p>You are solely responsible for all activities that occur under your account.</p>
               </section>
