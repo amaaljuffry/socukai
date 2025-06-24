@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AcceptableUsePolicyPage() {
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -64,7 +66,7 @@ export default function AcceptableUsePolicyPage() {
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">5. Reporting Violations</h2>
-          <p>Report abuse or policy breaches via our <a href="/contact" className="text-blue-600 underline">Contact Us</a> page.</p>
+          <p>Report abuse or policy breaches via our <Link href="/contact" className="text-blue-600 underline">Contact Us</Link> page.</p>
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">6. Changes to This Policy</h2>
