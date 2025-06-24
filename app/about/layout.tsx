@@ -10,6 +10,7 @@ const staticSidebarLinks: SidebarNavItem[] = [
   { title: 'About', href: '/about' },
   { title: 'Help', href: '/help' },
   { title: 'Changelog', href: '/changelog' },
+  { title: 'Tax Relief', href: '/tax-relief' },
   { title: 'Contact', href: '/contact' },
   { title: 'Back to Main App', href: '/back-to-app', disabled: true }, // Unique key
   { title: 'Individual', href: '/individual' },
