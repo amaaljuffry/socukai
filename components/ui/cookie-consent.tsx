@@ -3,6 +3,7 @@ import { CookieIcon } from "lucide-react";
 import { Button } from "./button";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function CookieConsent({
     variant = "default",
@@ -47,10 +48,10 @@ export default function CookieConsent({
                     }, 700);
                 }
             }
-        } catch (e) {
-            // console.log("Error: ", e);
+        } catch {
+            // ignore
         }
-    }, []);
+    }, [demo]);
 
     return variant != "small" ? (
         <div
@@ -76,16 +77,16 @@ export default function CookieConsent({
                             <br />
                             <br />
                             <span className="text-xs">
-                                By clicking "
+                                By clicking &quot;
                                 <span className="font-medium opacity-80">
                                     Accept
                                 </span>
-                                ", you agree to our use of cookies.
+                                &quot;, you agree to our use of cookies.
                             </span>
                             <br />
-                            <a href="/cookie-policy" className="text-xs underline">
+                            <Link href="/cookie-policy" className="text-xs underline">
                                 Learn more.
-                            </a>
+                            </Link>
                         </p>
                     </div>
                     <div className="flex gap-2 p-4 py-5 border-t border-border dark:bg-background/20">

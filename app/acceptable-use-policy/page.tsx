@@ -5,7 +5,7 @@ export default function AcceptableUsePolicyPage() {
       <p className="text-sm text-muted-foreground mb-6">Last Updated: October 26, 2024</p>
       <div className="w-full md:w-2/3 space-y-6">
         <p>
-          This policy defines permitted and prohibited uses of Socukai.my (the "Service"). By using the Service, you agree to comply with these rules. Violations may result in account suspension or termination.
+          This policy defines permitted and prohibited uses of Socukai.my (the &quot;Service&quot;). By using the Service, you agree to comply with these rules. Violations may result in account suspension or termination.
         </p>
         <section>
           <h2 className="text-xl font-semibold mb-2">1. Permitted Uses</h2>
@@ -27,7 +27,7 @@ export default function AcceptableUsePolicyPage() {
           <ul className="list-disc pl-6 space-y-1">
             <li>Attempt to hack, disrupt, or overload the Service (e.g., DDoS attacks, brute-forcing).</li>
             <li>Bypass access controls or exploit vulnerabilities.</li>
-            <li>Share login credentials or compromise other users' accounts.</li>
+            <li>Share login credentials or compromise other users&apos; accounts.</li>
           </ul>
           <h3 className="font-semibold mt-4">C. Content Restrictions</h3>
           <ul className="list-disc pl-6 space-y-1">
@@ -64,7 +64,7 @@ export default function AcceptableUsePolicyPage() {
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">5. Reporting Violations</h2>
-          <p>Report abuse or policy breaches to: <a href="mailto:legal@socukai.my" className="text-blue-600 underline">legal@socukai.my</a>.</p>
+          <p>Report abuse or policy breaches to: legal@socukai.my.</p>
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">6. Changes to This Policy</h2>
