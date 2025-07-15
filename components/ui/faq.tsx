@@ -95,6 +95,34 @@ const faqSections = [
       },
     ],
   },
+  {
+    title: "Content Creators & Online Income",
+    questions: [
+      {
+        question: `I'm a content creator. Do I need to pay tax in Malaysia?`,
+        answer: `Yes, if you're earning income (even part-time), you’re considered self-employed and must file tax with LHDN.`,
+      },
+      {
+        question: `I’m a full-time content creator — do I have to pay more tax?`,
+        answer: `You must report all your income just like any other business. Your tax amount depends on your total income minus expenses (net profit).`,
+      },
+      {
+        question: `What kind of income should I declare?`,
+        answer: (
+          <>
+            <div>Declare all income sources, including:</div>
+            <ul className="list-disc pl-5 mt-2">
+              <li>Sponsorship or brand deals</li>
+              <li>YouTube/Instagram/TikTok income</li>
+              <li>Affiliate commissions</li>
+              <li>Ad revenue (e.g. from Google/Meta)</li>
+              <li>Sales of digital products or services</li>
+            </ul>
+          </>
+        ),
+      },
+    ],
+  },
 ];
 
 export function IndividualFAQ() {

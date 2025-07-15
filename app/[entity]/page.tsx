@@ -251,116 +251,7 @@ function IndividualOverview() {
         </CardContent>
       </Card>
 
-      {/* E-Invoicing Requirements for Individuals */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <span className="text-2xl">📄</span>
-            E-Invoicing Requirements for Individuals
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-muted-foreground leading-relaxed">
-            E-invoicing affects individuals differently based on whether they conduct business activities 
-            or are only employees. Understanding your obligations is crucial for compliance.
-          </p>
-          
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Individuals with Business Activities */}
-            <div className="border rounded-lg p-4 bg-orange-50 border-orange-200">
-              <h4 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
-                <span className="text-xl">👨‍💻</span>
-                Individuals with Business Activities
-              </h4>
-              <p className="text-sm text-orange-800 mb-3">
-                <strong>E-Invoicing: REQUIRED</strong> - You must comply based on your annual turnover.
-              </p>
-              <ul className="text-sm text-orange-800 space-y-1">
-                <li>• Freelancers and consultants</li>
-                <li>• Online sellers and dropshippers</li>
-                <li>• Professional service providers</li>
-                <li>• Independent contractors</li>
-                <li>• Anyone with business income (Form B)</li>
-              </ul>
-              <div className="mt-3 p-2 bg-orange-100 rounded">
-                <p className="text-xs text-orange-900">
-                  <strong>Implementation:</strong> Based on annual turnover, same timeline as businesses
-                </p>
-              </div>
-            </div>
-
-            {/* Pure Salary Earners */}
-            <div className="border rounded-lg p-4 bg-green-50 border-green-200">
-              <h4 className="font-semibold text-green-900 mb-3 flex items-center gap-2">
-                <span className="text-xl">👔</span>
-                Pure Salary Earners
-              </h4>
-              <p className="text-sm text-green-800 mb-3">
-                <strong>E-Invoicing: NOT REQUIRED</strong> - You don&apos;t need to issue e-invoices.
-              </p>
-              <ul className="text-sm text-green-800 space-y-1">
-                <li>• Employment income only (Form BE)</li>
-                <li>• No business activities</li>
-                <li>• No side income or freelance work</li>
-                <li>• Employer handles tax deductions</li>
-                <li>• May receive e-invoices from businesses</li>
-              </ul>
-              <div className="mt-3 p-2 bg-green-100 rounded">
-                <p className="text-xs text-green-900">
-                  <strong>Note:</strong> You may receive e-invoices from businesses you purchase from
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-            <h4 className="font-semibold text-blue-900 mb-2">Implementation Timeline for Business Activities:</h4>
-            <ul className="text-blue-800 space-y-1 text-sm">
-              <li>• <strong>August 2024:</strong> Turnover &gt; RM100 million</li>
-              <li>• <strong>January 2025:</strong> Turnover RM25M - RM100M</li>
-              <li>• <strong>July 2025:</strong> Turnover RM5M - RM25M</li>
-              <li>• <strong>January 2026:</strong> Turnover RM1M - RM5M</li>
-              <li>• <strong>July 2026:</strong> All remaining businesses</li>
-              <li>• <strong>Exempt:</strong> Turnover &lt; RM500,000</li>
-            </ul>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="space-y-3">
-              <h4 className="font-semibold text-purple-600">🔧 Technical Requirements (If Required)</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• XML/JSON format (UBL 2.1 standard)</li>
-                <li>• MyInvois portal or API integration</li>
-                <li>• Digital certificate for signing</li>
-                <li>• Real-time validation required</li>
-                <li>• QR code generation for delivery</li>
-              </ul>
-            </div>
-            
-            <div className="space-y-3">
-              <h4 className="font-semibold text-red-600">⚠️ Compliance Obligations (If Required)</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Submit all invoices to MyInvois</li>
-                <li>• 72-hour window for corrections</li>
-                <li>• 7-year archiving requirement</li>
-                <li>• Penalties: RM200-RM20,000 per violation</li>
-                <li>• Cross-border transactions need special handling</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
-            <h4 className="font-semibold text-yellow-900 mb-2">Key Points for Individuals:</h4>
-            <ul className="text-yellow-800 space-y-1 text-sm">
-              <li>• <strong>Business activities = E-invoicing required</strong> (regardless of business structure)</li>
-              <li>• <strong>Employment only = No e-invoicing required</strong> (but may receive e-invoices)</li>
-              <li>• <strong>Mixed income:</strong> E-invoicing applies to business portion only</li>
-              <li>• <strong>Turnover threshold:</strong> Based on business income, not total income</li>
-              <li>• <strong>Support available:</strong> 6-month grace period, free portal access, tax incentives</li>
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
+      
     </div>
   );
 }
@@ -1746,113 +1637,109 @@ function CompanyIncomeExpenses() {
   );
 }
 
-
-
 function IndividualEInvoicing() {
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-bold mb-4">E-Invoicing for Individuals</h1>
-      
+      {/* Who Must Comply Card */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">How E-Invoicing Affects You as an Individual</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+            <span className="text-2xl">📋</span>
+            Who Must Comply with e-Invoicing in Malaysia?
+          </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-muted-foreground leading-relaxed">
-            As an individual, the e-invoicing mandate applies to you ONLY if you are conducting business activities. This includes freelancers, consultants, and anyone with side income. It does not apply to pure salary earners.
-          </p>
-          
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="border rounded-lg p-4 bg-orange-50 border-orange-200">
-              <h4 className="font-semibold text-orange-900 mb-3">You MUST Issue E-Invoices If:</h4>
-              <ul className="text-sm text-orange-800 space-y-1 list-disc pl-5">
-                <li>You are a freelancer or consultant.</li>
-                <li>You run an online store or dropshipping business.</li>
-                <li>You receive commissions or professional fees.</li>
-                <li>You file your taxes using Form B (Business Income).</li>
-              </ul>
-            </div>
-            <div className="border rounded-lg p-4 bg-green-50 border-green-200">
-              <h4 className="font-semibold text-green-900 mb-3">You DO NOT Issue E-Invoices If:</h4>
-              <ul className="text-sm text-green-800 space-y-1 list-disc pl-5">
-                <li>You only earn a salary from an employer.</li>
-                <li>You have no business or side income.</li>
-                <li>You file your taxes using Form BE (Employment Income).</li>
-                <li>You may still receive e-invoices for your purchases.</li>
-              </ul>
-            </div>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border">
+              <thead>
+                <tr className="bg-muted">
+                  <th className="p-2 border">Category</th>
+                  <th className="p-2 border">E-Invoicing Requirement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border p-2 font-semibold">Individual (not in business)</td>
+                  <td className="border p-2 text-center text-red-600 font-bold">❌ Not required</td>
+                </tr>
+                <tr>
+                  <td className="border p-2 font-semibold">Individual with business income (sole proprietor, freelancer, etc.)</td>
+                  <td className="border p-2 text-center text-green-600 font-bold">✅ Required (based on annual turnover threshold)</td>
+                </tr>
+                <tr>
+                  <td className="border p-2 font-semibold">Company / Sdn Bhd</td>
+                  <td className="border p-2 text-center text-green-600 font-bold">✅ Required</td>
+                </tr>
+                <tr>
+                  <td className="border p-2 font-semibold">Partnership / LLP</td>
+                  <td className="border p-2 text-center text-green-600 font-bold">✅ Required</td>
+                </tr>
+                <tr>
+                  <td className="border p-2 font-semibold">Co-operative / NGO (if generating income)</td>
+                  <td className="border p-2 text-center text-green-600 font-bold">✅ Required</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4">
+            <span className="font-semibold text-orange-700">Key Point:</span>
+            <p className="text-muted-foreground mt-1">
+              Even <span className="font-semibold">individuals</span> (like freelancers or online sellers) <span className="font-semibold">must comply</span> with e-Invoicing <span className="font-semibold">if they earn income from business</span> and meet the <span className="font-semibold">annual turnover threshold</span> set by LHDN.
+            </p>
           </div>
         </CardContent>
       </Card>
-
+      {/* Timeline Card */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">📅 Implementation Timeline (Based on Business Turnover)</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+            <span className="text-2xl">📆</span>
+            LHDN e-Invoicing Timeline
+          </CardTitle>
         </CardHeader>
         <CardContent>
-            <p className="text-sm text-muted-foreground mb-4">
-              The requirement to start issuing e-invoices depends on your annual business turnover, not your total personal income.
-            </p>
-            <div className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                <div className="border rounded-lg p-4 bg-green-50">
-                  <Badge className="bg-green-600">Phase 1: Aug 2024</Badge>
-                  <p className="font-semibold mt-2">Turnover &gt; RM100 million</p>
-                </div>
-                <div className="border rounded-lg p-4 bg-blue-50">
-                  <Badge className="bg-blue-600">Phase 2: Jan 2025</Badge>
-                  <p className="font-semibold mt-2">Turnover RM25M - RM100M</p>
-                </div>
-                <div className="border rounded-lg p-4 bg-orange-50">
-                  <Badge className="bg-orange-600">Phase 3: Jul 2025</Badge>
-                  <p className="font-semibold mt-2">Turnover RM5M - RM25M</p>
-                </div>
-                <div className="border rounded-lg p-4 bg-purple-50">
-                  <Badge className="bg-purple-600">Phase 4: Jan 2026</Badge>
-                  <p className="font-semibold mt-2">Turnover RM1M - RM5M</p>
-                </div>
-                <div className="border rounded-lg p-4 bg-red-50">
-                  <Badge className="bg-red-600">Phase 5: Jul 2026</Badge>
-                  <p className="font-semibold mt-2">Turnover up to RM1M</p>
-                </div>
-                <div className="border rounded-lg p-4 bg-gray-100">
-                  <Badge variant="secondary">Exempt</Badge>
-                  <p className="font-semibold mt-2">Turnover &lt; RM500,000</p>
-                </div>
-              </div>
-            </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border">
+              <thead>
+                <tr className="bg-muted">
+                  <th className="p-2 border">Annual Turnover (RM)</th>
+                  <th className="p-2 border">E-Invoice Effective Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border p-2">&gt; 100 million</td>
+                  <td className="border p-2">1 August 2024</td>
+                </tr>
+                <tr>
+                  <td className="border p-2">&gt; 25 million</td>
+                  <td className="border p-2">1 January 2025</td>
+                </tr>
+                <tr>
+                  <td className="border p-2 font-semibold">All taxpayers (including sole props/freelancers)</td>
+                  <td className="border p-2 font-semibold text-green-700">1 July 2025</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </CardContent>
       </Card>
-
-      <Accordion type="multiple" className="w-full">
-        <AccordionItem value="compliance">
-          <AccordionTrigger>Compliance & Key Requirements</AccordionTrigger>
-          <AccordionContent>
-            <div className="space-y-4">
-              <p className="text-muted-foreground">If you are required to issue e-invoices, you must adhere to the following:</p>
-              <ul className="list-disc pl-5 space-y-2 text-sm">
-                <li>Submit invoices to the MyInvois Portal for validation before sending to clients.</li>
-                <li>Use either XML or JSON format for your invoices.</li>
-                <li>There is a 72-hour window to cancel or have a client reject an invoice after validation.</li>
-                <li>Penalties for non-compliance range from RM200 to RM20,000 per violation.</li>
-              </ul>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="resources">
-          <AccordionTrigger>Support for Individuals & MSMEs</AccordionTrigger>
-          <AccordionContent>
-            <div className="space-y-3">
-              <p className="font-semibold">The government provides several support measures:</p>
-              <ul className="list-disc pl-5 space-y-2 text-sm">
-                <li>A 6-month grace period for each implementation phase.</li>
-                <li>Free access to the MyInvois Portal for manual invoice creation.</li>
-                <li>Tax deduction of up to RM50,000 for e-invoicing implementation costs for MSMEs.</li>
-              </ul>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      {/* Summary Card */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <span className="text-2xl">✅</span>
+            Summary
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5 space-y-2 text-sm">
+            <li><span className="font-semibold text-red-600">Private individuals (salary earners, retirees, etc.)</span> = <span className="font-bold">Not applicable</span>.</li>
+            <li><span className="font-semibold text-green-700">Sole proprietors, freelancers, small business owners</span> = <span className="font-bold">Must comply by 1 July 2025</span>, even if you&apos;re just an individual using your IC for business registration.</li>
+          </ul>
+        </CardContent>
+      </Card>
     </div>
   );
 }

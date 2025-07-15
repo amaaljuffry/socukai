@@ -105,7 +105,10 @@ export function SidebarNav({ items, className, onLinkClick }: SidebarNavProps) {
           />
         </Link>
         <span className="mt-2 text-[8px] text-muted-foreground">
-          - 2025 ALL RIGHT RESERVED <p>POWERED BY PETAI.AGENCY</p>
+          - 2025 ALL RIGHT RESERVED<br />
+          <Link href="https://www.petai.agency/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+            POWERED BY <span className="italic">PETAI.AGENCY</span>
+          </Link>
         </span>
       </div>
     </>

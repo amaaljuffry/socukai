@@ -325,7 +325,7 @@ export function TaxPreparationChecklist() {
             <div className="flex items-center gap-4">
               <div className="flex-shrink-0">
                 <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center">
-                  <div className="text-2xl font-bold text-gray-800">
+                  <div className="text-xl font-bold text-gray-800">
                     {progress.toFixed(0)}%
                   </div>
                 </div>
@@ -640,7 +640,7 @@ export function SolePropChecklist() {
             <div className="flex items-center gap-4">
               <div className="flex-shrink-0">
                 <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center">
-                  <div className="text-2xl font-bold text-gray-800">{progress.toFixed(0)}%</div>
+                  <div className="text-xl font-bold text-gray-800">{progress.toFixed(0)}%</div>
                 </div>
               </div>
               <div className="space-y-1">
@@ -840,7 +840,7 @@ export function CompanyChecklist() {
             <div className="flex items-center gap-4">
               <div className="flex-shrink-0">
                 <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center">
-                  <div className="text-2xl font-bold text-gray-800">{progress.toFixed(0)}%</div>
+                  <div className="text-xl font-bold text-gray-800">{progress.toFixed(0)}%</div>
                 </div>
               </div>
               <div className="space-y-1">
