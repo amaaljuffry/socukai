@@ -132,8 +132,8 @@ export function IndividualFAQ() {
     ...section,
     questions: section.questions.filter(
       q =>
-        q.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        q.answer.toLowerCase().includes(searchTerm.toLowerCase())
+        typeof q.question === 'string' && q.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (typeof q.answer === 'string' && q.answer.toLowerCase().includes(searchTerm.toLowerCase()))
     ),
   })).filter(section => section.questions.length > 0);
 
