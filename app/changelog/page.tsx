@@ -1,7 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-const changelog = [
+type ChangelogSection = "added" | "changed" | "fixed" | "removed";
+type ChangelogEntry = {
+  version: string;
+  date: string;
+  added: string[];
+  changed: string[];
+  fixed: string[];
+  removed: string[];
+};
+
+const changelog: ChangelogEntry[] = [
   {
     version: "2.3.0",
     date: "2024-06-10",
@@ -152,7 +162,7 @@ const changelog = [
   },
 ];
 
-const sectionLabels = {
+const sectionLabels: Record<ChangelogSection, string> = {
   added: "Added",
   changed: "Changed",
   fixed: "Fixed",
@@ -175,7 +185,7 @@ export default function ChangelogPage() {
                   {entry.version}
                   <Badge variant="default" className="text-xs font-normal py-0.5 px-2 align-middle">{entry.date}</Badge>
                 </h2>
-                {["added", "changed", "fixed", "removed"].map((section) =>
+                {(["added", "changed", "fixed", "removed"] as const).map((section) =>
                   entry[section].length > 0 ? (
                     <div key={section} className="mb-2">
                       <div className="font-bold mb-1">{sectionLabels[section]}</div>
