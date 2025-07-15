@@ -28,14 +28,14 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Socukai.my " />
         <meta property="og:description" content="An info app Malaysian tax compliance." />
-        <meta property="og:image" content="https://opengraph.b-cdn.net/production/images/4006c82b-a620-4b1c-8e1c-26564d1e3912.jpg?token=ZSr7Pc5aRyjXZgRQ6y_KvuZi5BtJ32cJLcsmxsmYEFI&height=630&width=1200&expires=33288573628" />
+        <meta property="og:image" content="/META-OPENGRAPH.jpg" />
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="socukai.ama24.my" />
         <meta property="twitter:url" content="https://socukai.ama24.my/changelog" />
         <meta name="twitter:title" content="Socukai.my " />
         <meta name="twitter:description" content="An info app Malaysian tax compliance." />
-        <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/4006c82b-a620-4b1c-8e1c-26564d1e3912.jpg?token=ZSr7Pc5aRyjXZgRQ6y_KvuZi5BtJ32cJLcsmxsmYEFI&height=630&width=1200&expires=33288573628" />
+        <meta name="twitter:image" content="/META-OPENGRAPH.jpg" />
       </Head>
       <body className={inter.className + " min-h-screen flex flex-col overflow-x-hidden"}>
         {children}
